@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Strukturovaná data
  * Description: Automatická a ruční správa strukturovaných dat (JSON-LD) pro WordPress + globální data firmy + kombinovatelné presety.
- * Version: 1.0
+ * Version: 1.1
  * Author: Smart Websites
  * Author URI: https://smart-websites.cz
  * Update URI: https://github.com/paveltravnicek/sw-schema-manager/
@@ -11,10 +11,6 @@
 
 if (!defined('ABSPATH')) {
     exit;
-}
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
 }
 
 require __DIR__ . '/plugin-update-checker/plugin-update-checker.php';
@@ -31,7 +27,7 @@ $swUpdateChecker->setBranch('main');
 $swUpdateChecker->getVcsApi()->enableReleaseAssets('/\.zip$/i');
 
 if (!defined('SW_SCHEMA_MANAGER_VERSION')) {
-    define('SW_SCHEMA_MANAGER_VERSION', '1.0');
+    define('SW_SCHEMA_MANAGER_VERSION', '1.1');
 }
 
 final class SW_Schema_Manager {
@@ -92,14 +88,14 @@ final class SW_Schema_Manager {
             'sw-schema-manager-admin',
             plugin_dir_url(__FILE__) . 'assets/admin.css',
             [],
-            '1.3.2'
+            '1.3.6'
         );
 
         wp_enqueue_script(
             'sw-schema-manager-admin',
             plugin_dir_url(__FILE__) . 'assets/admin.js',
             [],
-            '1.3.2',
+            '1.3.6',
             true
         );
 
@@ -130,12 +126,15 @@ final class SW_Schema_Manager {
         <div class="wrap sw-schema-admin">
             <div class="sw-plugin-header">
                 <div class="sw-plugin-header__inner">
-                    <div class="sw-plugin-header__top">
-                        <div class="sw-plugin-header__eyebrow"><?php echo esc_html__('Smart Websites', 'sw-schema-manager'); ?></div>
-                        <div class="sw-plugin-header__version"><?php echo esc_html__('Verze', 'sw-schema-manager'); ?> <?php echo esc_html(SW_SCHEMA_MANAGER_VERSION); ?></div>
-                    </div>
+                    <div class="sw-plugin-header__eyebrow"><?php echo esc_html__('Smart Websites', 'sw-schema-manager'); ?></div>
                     <h1><?php echo esc_html__('Strukturovaná data', 'sw-schema-manager'); ?></h1>
                     <p><?php echo esc_html__('Centrální správa automatických structured data, firemních údajů a ručních doplnění pro konkrétní stránky.', 'sw-schema-manager'); ?></p>
+                </div>
+                <div class="sw-plugin-header__meta">
+                    <div class="sw-plugin-header__version">
+                        <strong><?php echo esc_html(SW_SCHEMA_MANAGER_VERSION); ?></strong>
+                        <span><?php echo esc_html__('Verze pluginu', 'sw-schema-manager'); ?></span>
+                    </div>
                 </div>
             </div>
 
