@@ -13,6 +13,23 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+require __DIR__ . '/plugin-update-checker/plugin-update-checker.php';
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$swUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/paveltravnicek/sw-schema-manager/',
+	__FILE__,
+	'sw-schema-manager'
+);
+
+$swUpdateChecker->setBranch('main');
+$swUpdateChecker->getVcsApi()->enableReleaseAssets('/\.zip$/i');
+
 if (!defined('SW_SCHEMA_MANAGER_VERSION')) {
     define('SW_SCHEMA_MANAGER_VERSION', '1.0');
 }
