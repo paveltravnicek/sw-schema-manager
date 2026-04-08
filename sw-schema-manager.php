@@ -1,10 +1,11 @@
 <?php
 /**
- * Plugin Name: SW Schema Manager
+ * Plugin Name: Strukturovaná data
  * Description: Automatická a ruční správa strukturovaných dat (JSON-LD) pro WordPress + globální data firmy + kombinovatelné presety.
- * Version: 1.3.2
+ * Version: 1.0
  * Author: Smart Websites
  * Author URI: https://smart-websites.cz
+ * Update URI: https://github.com/paveltravnicek/sw-schema-manager/
  * Text Domain: sw-schema-manager
  */
 
