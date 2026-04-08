@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
 }
 
 if (!defined('SW_SCHEMA_MANAGER_VERSION')) {
-    define('SW_SCHEMA_MANAGER_VERSION', '1.3.2');
+    define('SW_SCHEMA_MANAGER_VERSION', '1.0');
 }
 
 final class SW_Schema_Manager {
