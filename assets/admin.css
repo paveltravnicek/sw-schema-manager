@@ -1342,3 +1342,140 @@
         border-radius:18px !important;
     }
 }
+
+
+/* ===== Licence box ===== */
+
+.sw-schema-card--licence{
+	padding:24px !important;
+	margin-bottom:18px;
+}
+
+.sw-schema-card__header--licence{
+	display:flex;
+	justify-content:space-between;
+	align-items:flex-start;
+	gap:18px;
+	flex-wrap:wrap;
+	margin-bottom:18px;
+}
+
+.sw-schema-badge{
+	display:inline-flex;
+	align-items:center;
+	padding:10px 14px;
+	border-radius:999px;
+	font-size:13px;
+	font-weight:700;
+	line-height:1;
+}
+
+.sw-schema-badge--active{
+	background:rgba(0,163,42,.12);
+	color:#0a7a22;
+}
+
+.sw-schema-badge--inactive{
+	background:rgba(214,54,56,.12);
+	color:#b42318;
+}
+
+.sw-schema-license-grid{
+	display:grid;
+	grid-template-columns:repeat(3,1fr);
+	gap:14px;
+	margin-bottom:18px;
+}
+
+.sw-schema-license-item{
+	padding:16px 18px;
+	border:1px solid #dbe5f1;
+	border-radius:18px;
+	background:#fbfdff;
+	box-shadow:0 6px 18px rgba(15,23,42,.035);
+	min-height:auto;
+}
+
+.sw-schema-license-label,
+.sw-schema-license-item > span:first-child{
+	display:block;
+	margin-bottom:6px;
+	font-size:12px;
+	color:#64748b;
+	text-transform:uppercase;
+	letter-spacing:.04em;
+	line-height:1.35;
+	font-weight:700;
+}
+
+.sw-schema-license-item strong{
+	display:block;
+	font-size:17px;
+	line-height:1.3;
+	font-weight:700;
+	margin:0;
+	color:inherit;
+}
+
+.sw-schema-license-item span:last-child{
+	display:block;
+	margin-top:6px;
+	color:#475569;
+	font-size:14px;
+	line-height:1.5;
+}
+
+.sw-schema-license-form-wrap{
+	margin-top:6px;
+	padding-top:18px;
+	border-top:1px solid #e7edf5;
+}
+
+.sw-schema-license-form{
+	display:grid;
+	gap:12px;
+}
+
+.sw-schema-license-actions{
+	display:flex;
+	gap:10px;
+	flex-wrap:wrap;
+}
+
+.sw-schema-note{
+	padding:14px 16px;
+	border-radius:18px;
+	background:#f6f7f7;
+	border:1px solid #dbe5f1;
+	font-size:14px;
+	line-height:1.5;
+	color:inherit;
+}
+
+.sw-schema-admin form.is-readonly{
+	opacity:.92;
+}
+
+.sw-schema-admin form.is-readonly .button,
+.sw-schema-admin form.is-readonly input,
+.sw-schema-admin form.is-readonly select,
+.sw-schema-admin form.is-readonly textarea{
+	pointer-events:none;
+}
+
+@media (max-width:1100px){
+	.sw-schema-license-grid{
+		grid-template-columns:1fr;
+	}
+}
+
+@media (max-width:782px){
+	.sw-schema-card__header--licence{
+		gap:12px;
+	}
+
+	.sw-schema-license-actions{
+		flex-direction:column;
+		align-items:flex-start;
+	}
+}
