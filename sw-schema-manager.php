@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Strukturovaná data
  * Description: Automatická a ruční správa strukturovaných dat (JSON-LD) pro WordPress + globální data firmy + kombinovatelné presety.
- * Version: 1.0
+ * Version: 1.1
  * Author: Smart Websites
  * Author URI: https://smart-websites.cz
  * Update URI: https://github.com/paveltravnicek/sw-schema-manager/
@@ -30,13 +30,13 @@ $swUpdateChecker->setBranch('main');
 $swUpdateChecker->getVcsApi()->enableReleaseAssets('/\.zip$/i');
 
 if (!defined('SW_SCHEMA_MANAGER_VERSION')) {
-    define('SW_SCHEMA_MANAGER_VERSION', '1.0');
+    define('SW_SCHEMA_MANAGER_VERSION', '1.1');
 }
 
 final class SW_Schema_Manager {
     const LICENSE_OPTION   = 'sw_schema_manager_license';
     const LICENSE_CRON_HOOK = 'sw_schema_manager_license_daily_check';
-    const HUB_BASE         = 'https://smart-websites.cz';
+    const HUB_BASE         = 'https://agent.smart-websites.cz';
     const PLUGIN_SLUG      = 'sw-schema-manager';
     const OPTION_GLOBAL    = 'sw_schema_global';
     const OPTION_AUTOMATIC = 'sw_schema_automatic';
@@ -1251,7 +1251,7 @@ final class SW_Schema_Manager {
             'plugin_version' => SW_SCHEMA_MANAGER_VERSION,
         ];
 
-        $res = wp_remote_post(rtrim(self::HUB_BASE, '/') . '/wp-json/swlic/v2/plugin-license', [
+        $res = wp_remote_post(rtrim(self::HUB_BASE, '/') . '/index.php?api=swlic/v2/plugin-license', [
             'timeout' => 20,
             'headers' => ['Content-Type' => 'application/json'],
             'body' => wp_json_encode($payload, JSON_UNESCAPED_SLASHES),
